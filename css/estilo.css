@@ -1,0 +1,111 @@
+/*body{
+	background: #F7FF7F;
+}
+
+#cabecera{
+	background: #01007C;
+	padding: 20px 10px 10px 10px;
+	position: absolute;
+	left: 30%;
+	width: 45%;
+	height: 8%;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	text-align: center;
+	color: darkkhaki;	
+}
+
+#contenedorformulario{
+	background: #669999;
+	position: absolute;
+	top: 14%;
+	left: 30%;
+	width: 45%;
+	height: 40%;
+	padding: 20px 0px 0px 20px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+#Tabla{
+	position: absolute;
+	top: 55%;
+	left: 22%;
+	width: 60%;
+	height: auto;
+	padding: 10px 0px 0px 20px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 20px;
+	justify-content: center;	
+}
+
+#miCod,#miNom,#miNota,#miCed{
+	font-family: Arial;
+	font-size: 20px;
+	width: 60%;
+}
+
+#lcod,#lnom,#lnot,#lCed{
+	font-family: Arial;
+	font-size: 20px;
+}
+
+#regTab{
+	background: #ABA9A9;
+	color: darkslategrey;
+	font-size: 20px;
+	width: 80%;
+	border-radius: 20px 20px 20px 20px;
+	text-align: center;
+
+}
+#h2{
+	text-align: center;
+	
+}
+
+#p1,#p2,#demo{
+	position: absolute;
+	
+	top: 105%;
+	left: auto;
+	width: 45%;
+	height: 10%;
+	padding: 20px 0px 0px 20px;
+	font-size: 14px;
+	font-style: italic;
+}
+
+#enviarRegistro,#btn2,#btn3,#btn4{
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0 10px 20px 0;
+    border: 1px solid #ccc;
+    background: #123;
+    border-radius: 8px 8px 8px 8px;
+	color:white;
+}
+
+#enviarRegistro:hover {
+    background: #ddd;
+	color:black;
+}
+
+#btn2:hover {
+    background: #ddd;
+	color:black;
+}
+
+#btn3:hover {
+    background: #ddd;
+	color:black;
+}
+
+#btn4:hover {
+    background: #ddd;
+	color:black;
+}*/
+

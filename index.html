@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" content="text/html" http-equiv="Content-Type">
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="js/registro.js"></script>
+<link rel="stylesheet" type="text/css" href="css/estilo.css">
+<title>FORMULARIO DE REGISTRO DE ESTUDIANTES</title>
+</head>
+<body>
+	<div id="cabecera">
+		<h1>Registro de Estudiante</h1>
+		<hr>
+	</div>
+	<div id="contenedorformulario">
+		<form id="datosRegistro">
+			<label id="lcod">Codigo:</label>
+			<br>
+			<input type="text" id="miCod" name="cod" disabled>
+			<br>
+			<label id="lnom">Nombres:</label>
+			<br>
+			<input type="text" id="miNom" name="nom">
+			<br>
+			<label id="apellidos">Apellidos:</label>
+			<br>
+			<input type="text" id="miApe" name="apellido">
+			<br>
+			<label id="lnot">Nota:</label>
+			<br>
+			<input type="text" id="miNota">
+			<br>
+			<label id="email">Email:</label>
+			<br>
+			<input type="text" id="miE">
+			<br>				
+			<label id="lCed">Cedula de Identidad</label>
+			<br>			
+			<input type="text" id="miCed">
+			<br>
+			<br>										
+		</form>
+	</div>
+	<button id="btn1">Registrar Alumnos</button>
+	<button onClick="calcularPromedio()" id="btn2">Mostrar Promedio</button>
+	<button onClick="calcularnotaAlta()" id="btn3">Mostrar Nota Mayor</button>
+	<button onClick="calcularnotaBaja()" id="btn4">Mostrar Nota mas baja</button>
+	<br>
+	<br>
+	<div id="Tabla" align="center">
+		<h2 id="h2">TABLA DE RESULTADOS DEL REGISTRO</h2>
+		<p id="p1"></p>
+ 		<br>			
+	</div>
+	<div>
+		<footer id="pie">
+			<p><strong>©Copyright derechos reservados: Claudio Mojica Valdez</strong></p>			
+		</footer>
+	</div>
+</body>
+</html>
