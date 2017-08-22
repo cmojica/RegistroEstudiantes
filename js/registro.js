@@ -100,59 +100,57 @@ $(document).ready(function(){
 		$("#miNota").val("");
 		$("#miE").val("");
 		$("#miCed").val("");
-	}	
-});
-
-
-	
-
-
-
-
-
-//Esta funcion calcula las notas más altas obtenidas por los alumnos
-function calcularnotaAlta(json){
-	//Validar para que cuando se haga click al boton no de ningun tipo de resultado
-	if(JSONregistro.length===0){
-		return false;
-	}else{
-		//Correor JSON para que de resultado de nota mas alta
-		var Nmax = 0;
-		for (var i=0;i< JSONregistro.length; i++){
-			if (Nmax<JSONregistro[i].Nota){
-				Nmax = JSONregistro[i].Nota;																			
-			}
-		}
-		alert("La nota maxima es: "+ Nmax);
 	}
-}
-//Eta función calcula la nota promedio de los alumnos
-function calcularPromedio(json){
-	if(JSONregistro.length===0){
+	//Esta función calcula la nota promedio de los alumnos
+	$("#btn2").click(function(){
+		//Validar para que cuando se haga click al boton no de ningun tipo de resultado
+		if(localStorage.length===0){
 		return false;
 	}else{
+		//Correr LocalStorage para que de resultado de nota mas alta
 		var suma=0.0;			
-		for (var i=0; i < JSONregistro.length; i++){
-			suma += JSONregistro[i].Nota;
-			var prom = suma / JSONregistro.length;		
+		for (var i=0; i < localStorage.length; i++){
+			var clave=localStorage.key(i);
+			var registro=$.parseJSON(localStorage.getItem(clave));	
+			suma += parseInt(registro.nota);
+			var prom = suma/localStorage.length ;		
 		}
-		alert("La nota promedio es: "+ prom);
+		alert("La nota promedio es: "+ prom.toFixed(2));
 	}
-}	
-
-//Esta función calcula la nota mas baja de los alumnos
-function calcularnotaBaja(json){
-	if(JSONregistro.length===0){
+	});	
+	//Esta funcion calcula las notas más altas obtenidas por los alumnos
+	$("#btn3").click(function(){
+		
+		//Validar para que cuando se haga click al boton no de ningun tipo de resultado
+		if(localStorage.length===0){
+			return false;
+		}else{
+			//Correr LocalStorage para que de resultado de nota mas alta
+			var Nmax = 0;
+			for (var i=0;i<localStorage.length; i++){
+				var clave=localStorage.key(i);
+				var registro=$.parseJSON(localStorage.getItem(clave));				
+				if (Nmax<registro.nota){
+					Nmax = parseInt(registro.nota);																			
+				}
+			}
+			alert("La nota maxima es: "+ Nmax);
+		}
+	});
+	//Esta función calcula la nota mas baja de los alumnos
+	$("#btn4").click(function(){
+		if(localStorage.length===0){
 		return false;
 	}else{
 		var Nmin = 100;
-		for (var i=0; i<JSONregistro.length; i++){
-			if (Nmin>JSONregistro[i].Nota){
-				Nmin = JSONregistro[i].Nota;
+		for (var i=0; i<localStorage.length; i++){
+			var clave=localStorage.key(i);
+			var registro=$.parseJSON(localStorage.getItem(clave));
+			if (Nmin>registro.nota){
+				Nmin = parseInt(registro.nota);
 			}
 		}
 		alert("La nota minima es: " + Nmin);
 	}
-}	
-
-
+	});		
+});

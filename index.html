@@ -4,6 +4,7 @@
 <meta charset="utf-8" content="text/html" http-equiv="Content-Type">
 <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="js/registro.js"></script>
+<script type="text/javascript" src="js/jquery.validate.js"></script>
 <link rel="stylesheet" type="text/css" href="css/estilo.css">
 <title>FORMULARIO DE REGISTRO DE ESTUDIANTES</title>
 </head>
@@ -13,14 +14,14 @@
 		<hr>
 	</div>
 	<div id="contenedorformulario">
-		<form id="datosRegistro">
+		<form method="get" class="miForm" id="miForm" action="">
 			<label id="lcod">Codigo:</label>
 			<br>
 			<input type="text" id="miCod" name="cod" disabled>
 			<br>
-			<label id="lnom">Nombres:</label>
+			<label for="nombre" id="lnom">Nombres:</label>
 			<br>
-			<input type="text" id="miNom" name="nom">
+			<input type="text" id="miNom" name="nombre" required minlength="3">
 			<br>
 			<label id="apellidos">Apellidos:</label>
 			<br>
@@ -28,23 +29,23 @@
 			<br>
 			<label id="lnot">Nota:</label>
 			<br>
-			<input type="text" id="miNota">
+			<input type="text" id="miNota" required>
 			<br>
 			<label id="email">Email:</label>
 			<br>
-			<input type="text" id="miE">
+			<input type="email" name="email" id="miE" required>
 			<br>				
-			<label id="lCed">Cedula de Identidad</label>
+			<label id="lCed">Cedula de Identidad:</label>
 			<br>			
-			<input type="text" id="miCed">
+			<input type="text" id="miCed" name="cedula" required>
 			<br>
 			<br>										
 		</form>
 	</div>
 	<button id="btn1">Registrar Alumnos</button>
-	<button onClick="calcularPromedio()" id="btn2">Mostrar Promedio</button>
-	<button onClick="calcularnotaAlta()" id="btn3">Mostrar Nota Mayor</button>
-	<button onClick="calcularnotaBaja()" id="btn4">Mostrar Nota mas baja</button>
+	<button id="btn2">Mostrar Promedio</button>
+	<button id="btn3">Mostrar Nota Mayor</button>
+	<button id="btn4">Mostrar Nota mas baja</button>
 	<br>
 	<br>
 	<div id="Tabla" align="center">
