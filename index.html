@@ -14,35 +14,35 @@
 		<hr>
 	</div>
 	<div id="contenedorformulario">
-		<form method="get" class="miForm" id="miForm" action="">
-			<label id="lcod">Codigo:</label>
-			<br>
+		<form method="get" action="" class="miForm" id="miForm" novalidate="novalidate">
+		<fieldset>Porfavor llene los siguientes datos para el respectivo registro del estudiante</fieldset>
+			<p><label id="lcod">Codigo:</label>
 			<input type="text" id="miCod" name="cod" disabled>
-			<br>
+			</p>
+			<p>
 			<label for="nombre" id="lnom">Nombres:</label>
-			<br>
-			<input type="text" id="miNom" name="nombre" required minlength="3">
-			<br>
+			<input type="text" id="miNom" name="nombre" required aria-required="true">
+			</p>
+			<p>
 			<label id="apellidos">Apellidos:</label>
-			<br>
-			<input type="text" id="miApe" name="apellido">
-			<br>
+			<input type="text" id="miApe" name="apellido" required aria-required="true">
+			</p>
+			<p>
 			<label id="lnot">Nota:</label>
-			<br>
-			<input type="text" id="miNota" required>
-			<br>
+			<input type="text" id="miNota" required aria-required="true">
+			</p>
+			<p>
 			<label id="email">Email:</label>
-			<br>
-			<input type="email" name="email" id="miE" required>
-			<br>				
-			<label id="lCed">Cedula de Identidad:</label>
-			<br>			
-			<input type="text" id="miCed" name="cedula" required>
-			<br>
-			<br>										
-		</form>
-	</div>
-	<button id="btn1">Registrar Alumnos</button>
+			<input type="email" name="email" id="miE" required aria-required="true">
+			</p>
+			<p>				
+			<label id="lCed">Cedula de Identidad:</label>			
+			<input type="text" id="miCed" name="cedula" required aria-required="true">
+			</p>	
+			<hr>				
+	<div>
+	<input class="submit" type="submit" value="Registrar" id="btn1">
+	
 	<button id="btn2">Mostrar Promedio</button>
 	<button id="btn3">Mostrar Nota Mayor</button>
 	<button id="btn4">Mostrar Nota mas baja</button>

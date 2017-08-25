@@ -14,7 +14,7 @@ function editarRegistro(id){
 		}
 	}
 }
-//Funci[on que elimina los registros de la tabla]
+//Funcion que elimina los registros de la tabla]
 function eliminarRegistro(id){
 	localStorage.removeItem(id);
 	//Mostrar Tabla
@@ -58,6 +58,35 @@ function listarEstudiantes(){
 	}	
 //Jquery
 $(document).ready(function(){
+	$.validator.setDefaults({
+		submitHandler: function() {
+			alert("Enviado");
+		}
+	});
+	// validate signup form on keyup and submit
+		$("#miForm").validate({
+			rules: {
+				miNom:{
+					required:"Este campo es requerido"},
+				miApe: "required",
+				miE: {
+					required: true,
+					email: true
+				},
+				miNota: {
+					required: "Obligatorio agregar una nota",
+				},
+				MiCed: "required"
+			},
+			messages: {
+				miNom: "Porfavor escriba un nombre",
+				miApe: "Porfavor escriba un apellido",
+				miE: "Ingrese un email valido",
+				miNota: "Ingrese una nota",
+				MiCed: "Ingrese la cedula"
+			}
+		});
+	
 	//Ver tabla de Estudiantes
 	listarEstudiantes();
 	//Crear un id automatico
@@ -77,6 +106,10 @@ $(document).ready(function(){
 		var nota=$("#miNota").val();
 		var email=$("#miE").val();
 		var cedula=$("#miCed").val();
+		
+		if((nombre,apellido,nota,email,cedula).length===0){
+			return false;
+			}else{
 				
 		var registro={
 			id:id,
@@ -84,13 +117,15 @@ $(document).ready(function(){
 			apellido:apellido,
 			nota:nota,
 			email:email,
-			cedula:cedula
+			cedula:cedula		
+		}
 		};
 		localStorage.setItem(id, JSON.stringify(registro));
 		contador=localStorage.length+1;
 				
 		listarEstudiantes();
 		restablecer();
+		
 	});
 	//funcion que limpia la pantalla		
 	function restablecer(){
@@ -152,5 +187,6 @@ $(document).ready(function(){
 		}
 		alert("La nota minima es: " + Nmin);
 	}
-	});		
+	});
+	
 });
