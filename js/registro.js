@@ -15,7 +15,7 @@ function editarRegistro(id){
 		}
 	}
 }
-//Funci[on que elimina los registros de la tabla]
+//Funcion que elimina los registros de la tabla]
 function eliminarRegistro(id){
 	localStorage.removeItem(id);
 	//Mostrar Tabla
@@ -59,6 +59,7 @@ function listarEstudiantes(){
 	}	
 //Jquery
 $(document).ready(function(){
+<<<<<<< HEAD
 	
 	$.validator.setDefaults({
 		submitHandler: function() {
@@ -106,6 +107,37 @@ $(document).ready(function(){
 		}
 	});
 
+=======
+	$.validator.setDefaults({
+		submitHandler: function() {
+			alert("Enviado");
+		}
+	});
+	// validate signup form on keyup and submit
+		$("#miForm").validate({
+			rules: {
+				miNom:{
+					required:"Este campo es requerido"},
+				miApe: "required",
+				miE: {
+					required: true,
+					email: true
+				},
+				miNota: {
+					required: "Obligatorio agregar una nota",
+				},
+				MiCed: "required"
+			},
+			messages: {
+				miNom: "Porfavor escriba un nombre",
+				miApe: "Porfavor escriba un apellido",
+				miE: "Ingrese un email valido",
+				miNota: "Ingrese una nota",
+				MiCed: "Ingrese la cedula"
+			}
+		});
+	
+>>>>>>> e6b8d13a6cb570c6d03cbb3dc9ac161a34fcd9f9
 	//Ver tabla de Estudiantes
 	listarEstudiantes();
 	//Crear un id automatico
@@ -125,23 +157,37 @@ $(document).ready(function(){
 		var nota=$("#miNota").val();
 		var email=$("#miE").val();
 		var cedula=$("#miCed").val();
+<<<<<<< HEAD
 		if((nombre,apellido,nota,email,cedula).length===0){
 			return false;
 		}else{		
+=======
+		
+		if((nombre,apellido,nota,email,cedula).length===0){
+			return false;
+			}else{
+				
+>>>>>>> e6b8d13a6cb570c6d03cbb3dc9ac161a34fcd9f9
 		var registro={
 			id:id,
 			nombre:nombre,
 			apellido:apellido,
 			nota:nota,
 			email:email,
+<<<<<<< HEAD
 			cedula:cedula
 			}
+=======
+			cedula:cedula		
+		}
+>>>>>>> e6b8d13a6cb570c6d03cbb3dc9ac161a34fcd9f9
 		};
 		localStorage.setItem(id, JSON.stringify(registro));
 		contador=localStorage.length+1;
 				
 		listarEstudiantes();
 		restablecer();
+		
 	});
 	//funcion que limpia la pantalla		
 	function restablecer(){
@@ -203,5 +249,6 @@ $(document).ready(function(){
 		}
 		alert("La nota minima es: " + Nmin);
 	}
-	});		
+	});
+	
 });
