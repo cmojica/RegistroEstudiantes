@@ -27,7 +27,7 @@ function listarEstudiantes(){
 	var tabla="";
 	var parrafo1=$("#p1");
 			
-	tabla+='<table border="1">';
+	tabla+='<table id="tabla">';
 	tabla+='<tr>';
 	tabla+='<th>ID</th>';
 	tabla+='<th>NOMBRE</th>';
@@ -44,100 +44,28 @@ function listarEstudiantes(){
 		var registro=$.parseJSON(localStorage.getItem(clave));
 				
 		tabla+='<tr>';
-		tabla+='<td>'+registro.id+'</td>';
+		tabla+='<td id="td1">'+registro.id+'</td>';
 		tabla+='<td>'+registro.nombre+'</td>';
 		tabla+='<td>'+registro.apellido+'</td>';
 		tabla+='<td>'+registro.nota+'</td>';
 		tabla+='<td>'+registro.email+'</td>';
-		tabla+='<td>'+registro.cedula+'</td>';
-		tabla+='<td><button onclick="editarRegistro(\''+registro.id+'\');">Editar</button></td>';
-		tabla+='<td><button onclick="eliminarRegistro(\''+registro.id+'\');">Eliminar</button></td>';
+		tabla+='<td id="td6">'+registro.cedula+'</td>';
+		tabla+='<td><button id="btnR" onclick="editarRegistro(\''+registro.id+'\');">Editar</button></td>';
+		tabla+='<td><button id="btnE" onclick="eliminarRegistro(\''+registro.id+'\');">Eliminar</button></td>';
 		tabla+='</tr>';				
 	}
 		tabla+='</table>';
 		$(parrafo1).html(tabla);
-	}	
-//Jquery
-$(document).ready(function(){
-<<<<<<< HEAD
-	
-	$.validator.setDefaults({
-		submitHandler: function() {
-			alert("submitted!");
-		}
-	});
-	
-	// validate signup form on keyup and submit
-	$("#miForm").validate({
-		rules: {
-			miNom: "required",
-			miApe: "required",
-			miNota: {
-				required: true,
-				minlength: 2
-			},
-			miE: {
-				required: true,
-				minlength: 5
-			},
-			miCed: {
-				required: true,
-				email: true
-			},
-			errorElement:"span",
-			messages: {
-				miNom: {
-					required: "Porfavor ingrese su nombre",
-					minlength: "Ingrese como minimo 3 caracteres"
-				},
-				miApe: "Porfavor ingrese su apellido",
-				miNota: {
-					required: "Please enter a username",
-					minlength: "Your username must consist of at least 2 characters"
-				},
-				miE: {
-					required: "Please provide a password",
-				},
-				miCed: {
-					required: "Please provide a password",
-					minlength: "Your password must be at least 5 characters long",
-					equalTo: "Please enter the same password as above"
-				},
-			}
-		}
-	});
+	}
 
-=======
-	$.validator.setDefaults({
-		submitHandler: function() {
-			alert("Enviado");
-		}
+
+//Jquery
+$(document).ready(function(){		
+
+	$("#miNom,#miApe,#miNota,#miE,#miCed").focus(function(){
+		$(this).css("background-color","#EEF4B7");		
 	});
-	// validate signup form on keyup and submit
-		$("#miForm").validate({
-			rules: {
-				miNom:{
-					required:"Este campo es requerido"},
-				miApe: "required",
-				miE: {
-					required: true,
-					email: true
-				},
-				miNota: {
-					required: "Obligatorio agregar una nota",
-				},
-				MiCed: "required"
-			},
-			messages: {
-				miNom: "Porfavor escriba un nombre",
-				miApe: "Porfavor escriba un apellido",
-				miE: "Ingrese un email valido",
-				miNota: "Ingrese una nota",
-				MiCed: "Ingrese la cedula"
-			}
-		});
 	
->>>>>>> e6b8d13a6cb570c6d03cbb3dc9ac161a34fcd9f9
 	//Ver tabla de Estudiantes
 	listarEstudiantes();
 	//Crear un id automatico
@@ -148,7 +76,7 @@ $(document).ready(function(){
 		contador=1;
 	}
 	$("#miCod").val(contador);
-	
+			
 	//Funcion para registrar estudiantes
 	$(".submit").click(function(){
 		var id=$("#miCod").val();
@@ -157,37 +85,27 @@ $(document).ready(function(){
 		var nota=$("#miNota").val();
 		var email=$("#miE").val();
 		var cedula=$("#miCed").val();
-<<<<<<< HEAD
-		if((nombre,apellido,nota,email,cedula).length===0){
-			return false;
-		}else{		
-=======
 		
-		if((nombre,apellido,nota,email,cedula).length===0){
-			return false;
-			}else{
 				
->>>>>>> e6b8d13a6cb570c6d03cbb3dc9ac161a34fcd9f9
+		if((nombre,apellido,nota,email,cedula).length===0){
+			return;
+		
+		}else{		
 		var registro={
 			id:id,
 			nombre:nombre,
 			apellido:apellido,
 			nota:nota,
 			email:email,
-<<<<<<< HEAD
 			cedula:cedula
 			}
-=======
-			cedula:cedula		
 		}
->>>>>>> e6b8d13a6cb570c6d03cbb3dc9ac161a34fcd9f9
-		};
+		
 		localStorage.setItem(id, JSON.stringify(registro));
 		contador=localStorage.length+1;
-				
 		listarEstudiantes();
-		restablecer();
-		
+		alert("!!Alumno Registrado!!");
+		restablecer();		
 	});
 	//funcion que limpia la pantalla		
 	function restablecer(){
@@ -196,7 +114,7 @@ $(document).ready(function(){
 		$("#miApe").val("");
 		$("#miNota").val("");
 		$("#miE").val("");
-		$("#miCed").val("");
+		$("#miCed").val("");		
 	}
 	//Esta función calcula la nota promedio de los alumnos
 	$("#btn2").click(function(){
@@ -249,6 +167,5 @@ $(document).ready(function(){
 		}
 		alert("La nota minima es: " + Nmin);
 	}
-	});
-	
+	});	
 });

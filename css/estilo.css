@@ -1,84 +1,136 @@
-/*body{
-	background: #F7FF7F;
+body{
+	background: #EEF4B7;
 }
-
-#cabecera{
+*{
+	margin: 0;
+	padding: 0;
+}
+header{
 	background: #01007C;
-	padding: 20px 10px 10px 10px;
-	position: absolute;
-	left: 30%;
-	width: 45%;
-	height: 8%;
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
+	width: 100%;
+  	position: fixed;
+  	z-index: 100;
+}
+#nav1{
+	background: #01007C;
+	margin-bottom: 100%;
 	text-align: center;
 	color: darkkhaki;	
+	padding: 20px;
+	
 }
 
 #contenedorformulario{
 	background: #669999;
 	position: absolute;
 	top: 14%;
-	left: 30%;
-	width: 45%;
-	height: 40%;
+	left: 1%;
+	width: 40%;
+	height: 60%;
 	padding: 20px 0px 0px 20px;
-	border-bottom-left-radius: 20px;
-	border-bottom-right-radius: 20px;
+	border-radius: 5px;
+	display: flex;
+	flex-flow: row wrap;
 }
 
-#Tabla{
+#divTabla{
 	position: absolute;
-	top: 55%;
-	left: 22%;
+	top: 15%;
+	left: 25%;
+	width: 60%;
+	height: auto;
+	padding: 10px 40px 0px 40px;
+	justify-content: center;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+#cont1{
+	position: absolute;
+	top: 0%;
+	left: 42%;
 	width: 60%;
 	height: auto;
 	padding: 10px 0px 0px 20px;
-	border-bottom-left-radius: 20px;
-	border-bottom-right-radius: 20px;
-	border-top-right-radius: 20px;
-	border-top-left-radius: 20px;
-	justify-content: center;	
+	justify-content: center;
+	display: flex;
+	flex-flow: row wrap;
 }
 
-#miCod,#miNom,#miNota,#miCed{
+#tabla{
+	position: relative;
+	margin: 0px 10px 30px 20%;	
+	border-collapse: collapse;
+	column-width:100px;
+}
+
+th{
+	background: #01007C;
+	color: white;
+	font-size: 15px;
+	border-collapse: collapse;
+	padding: 10px;
+	border: black 3px solid;
+}
+tr{
+	background: white;
+	border: black 3px solid;
+	border-collapse: collapse;	
+}
+
+td{
+	border: black 3px solid;
+	border-collapse: collapse;	
+}
+
+
+#milegend{
+	font-family: Constantia;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#mifield{
+	border: none;
+}
+
+#miCod,#miNom, #miApe,#miNota,#miE,#miCed{
 	font-family: Arial;
 	font-size: 20px;
 	width: 60%;
 }
 
-#lcod,#lnom,#lnot,#lCed{
+#lnom,#lmiNota,#lmiCed,#lmiApe,#lmiE,#lmiCod{
 	font-family: Arial;
 	font-size: 20px;
 }
 
-#regTab{
-	background: #ABA9A9;
-	color: darkslategrey;
-	font-size: 20px;
-	width: 80%;
-	border-radius: 20px 20px 20px 20px;
-	text-align: center;
-
-}
 #h2{
 	text-align: center;
-	
+	margin-top: 10%;
+	font-size: 25px;
+	text-shadow: 1.5px 1.5px 1px black;
 }
 
-#p1,#p2,#demo{
+#titulo1{
+	font-size: 40px;
+}
+
+
+#p1{
 	position: absolute;
-	
-	top: 105%;
 	left: auto;
 	width: 45%;
-	height: 10%;
+	height: 0%;
 	padding: 20px 0px 0px 20px;
 	font-size: 14px;
 	font-style: italic;
+	margin: auto;
 }
 
-#enviarRegistro,#btn2,#btn3,#btn4{
+
+#btn1,#btn2,#btn3,#btn4,#btnR,#btnE{
     font-weight: bold;
     cursor: pointer;
     padding: 5px;
@@ -89,7 +141,7 @@
 	color:white;
 }
 
-#enviarRegistro:hover {
+#btn1:hover {
     background: #ddd;
 	color:black;
 }
@@ -107,5 +159,20 @@
 #btn4:hover {
     background: #ddd;
 	color:black;
-}*/
+}
+
+#btnR:hover {
+    background: #ddd;
+	color:black;
+}
+
+#btnE:hover {
+    background: #ddd;
+	color:black;
+}
+#lapiz{
+	position: absolute;
+	margin: 1% 0% 0% 32%;
+	width: 45px;
+}
 

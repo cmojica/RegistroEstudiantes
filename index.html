@@ -5,92 +5,62 @@
 <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="js/registro.js"></script>
 <script type="text/javascript" src="js/jquery.validate.js"></script>
-<link rel="stylesheet" type="text/css" href="css/estilo.css">
-<title>FORMULARIO DE REGISTRO DE ESTUDIANTES</title>
+<link type="text/css" rel="stylesheet" href="css/estilo.css">
+	<script type="text/javascript">
+	</script>
+<title>Registro de Estudiantes</title>
+<img id="lapiz" src="img/Lapiz.png">
+	<nav id="nav1">
+		
+		<h1 id="titulo1">Registro de Estudiante</h1>		
+	</nav>
 </head>
 <body>
-	<div id="cabecera">
-		<h1>Registro de Estudiante</h1>
-		<hr>
-	</div>
 	<div id="contenedorformulario">
-<<<<<<< HEAD
-		<form method="get" class="miForm" id="miForm">
-			<label id="lcod">Codigo:</label>
-			<br>
-			<input type="text" id="miCod" name="miCod" disabled>
-			<br>
-			<label for="nombre" id="lnom">Nombres:</label>
-			<br>
-			<input type="text" id="miNom" name="miNom" class="miNom" required minlength="3">
-			<br>
-			<label id="apellidos">Apellidos:</label>
-			<br>
-			<input type="text" id="miApe" name="apellido" required>
-			<br>
-=======
-		<form method="get" action="" class="miForm" id="miForm" novalidate="novalidate">
-		<fieldset>Porfavor llene los siguientes datos para el respectivo registro del estudiante</fieldset>
-			<p><label id="lcod">Codigo:</label>
-			<input type="text" id="miCod" name="cod" disabled>
-			</p>
-			<p>
-			<label for="nombre" id="lnom">Nombres:</label>
-			<input type="text" id="miNom" name="nombre" required aria-required="true">
-			</p>
-			<p>
-			<label id="apellidos">Apellidos:</label>
-			<input type="text" id="miApe" name="apellido" required aria-required="true">
-			</p>
-			<p>
->>>>>>> e6b8d13a6cb570c6d03cbb3dc9ac161a34fcd9f9
-			<label id="lnot">Nota:</label>
-			<input type="text" id="miNota" required aria-required="true">
-			</p>
-			<p>
-			<label id="email">Email:</label>
-<<<<<<< HEAD
-			<br>
-			<input type="email" for="miE" name="miE" id="miE" class="miE" required aria-required="true">
-			<br>				
-			<label id="lCed">Cedula de Identidad:</label>
-			<br>			
-			<input type="text" id="miCed" required aria-required="true">
-			<br>
-			<br>
-			<input type="submit" name="submit" class="submit" value="Registrar Alumnos">
-			<button id="btn2">Mostrar Promedio</button>
-			<button id="btn3">Mostrar Nota Mayor</button>
-			<button id="btn4">Mostrar Nota mas baja</button>										
+		<form id="miForm" method="get" action="">
+			<fieldset id="mifield">
+				<legend id="milegend">Por favor, ingrese sus datos en el siguiente formulario todos los campos son obligatorios</legend>	
+					<br>
+					<label id="lmiCod">Codigo:</label>
+					<br>
+					<input type="text" id="miCod" name="cod" disabled>
+					<br>
+					<label id="lnom" for="miNom">Nombres:</label>
+					<br>
+					<input type="text" id="miNom" for="miNom" name="miNom" required aria-required="true">
+					<br>
+					<label id="lmiApe" for="miApe">Apellidos:</label>
+					<br>
+					<input type="text" id="miApe" name="apellido" required>
+					<br>
+					<label id="lmiNota" for="miNota">Nota:</label>
+					<br>
+					<input type="text" id="miNota" required>
+					<br>
+					<label id="lmiE" for="miE">Email:</label>
+					<br>
+					<input type="email" id="miE" required>
+					<br>				
+					<label id="lmiCed" for="miCed">Cedula de Identidad</label>
+					<br>			
+					<input type="text" id="miCed" required>
+					<br>
+					<br>
+					<input id="btn1" class="submit" type="submit" value="Registrar Alumnos">
+					<button id="btn2">Mostrar Promedio</button>
+					<button id="btn3">Mostrar Nota Mayor</button>
+					<button id="btn4">Mostrar Nota mas baja</button>
+			</fieldset>										
 		</form>
-	</div>
-	
-=======
-			<input type="email" name="email" id="miE" required aria-required="true">
-			</p>
-			<p>				
-			<label id="lCed">Cedula de Identidad:</label>			
-			<input type="text" id="miCed" name="cedula" required aria-required="true">
-			</p>	
-			<hr>				
-	<div>
-	<input class="submit" type="submit" value="Registrar" id="btn1">
-	
-	<button id="btn2">Mostrar Promedio</button>
-	<button id="btn3">Mostrar Nota Mayor</button>
-	<button id="btn4">Mostrar Nota mas baja</button>
->>>>>>> e6b8d13a6cb570c6d03cbb3dc9ac161a34fcd9f9
+	</div>	
 	<br>
 	<br>
-	<div id="Tabla" align="center">
+	<div id="cont1">
 		<h2 id="h2">TABLA DE RESULTADOS DEL REGISTRO</h2>
+	</div>	
+	<div id="divTabla" align="center">		
 		<p id="p1"></p>
- 		<br>			
-	</div>
-	<div>
-		<footer id="pie">
-			<p><strong>©Copyright derechos reservados: Claudio Mojica Valdez</strong></p>			
-		</footer>
+ 		<br> 					
 	</div>
 </body>
 </html>
