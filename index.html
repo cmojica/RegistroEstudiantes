@@ -14,18 +14,18 @@
 		<hr>
 	</div>
 	<div id="contenedorformulario">
-		<form method="get" class="miForm" id="miForm" action="">
+		<form method="get" class="miForm" id="miForm">
 			<label id="lcod">Codigo:</label>
 			<br>
-			<input type="text" id="miCod" name="cod" disabled>
+			<input type="text" id="miCod" name="miCod" disabled>
 			<br>
 			<label for="nombre" id="lnom">Nombres:</label>
 			<br>
-			<input type="text" id="miNom" name="nombre" required minlength="3">
+			<input type="text" id="miNom" name="miNom" class="miNom" required minlength="3">
 			<br>
 			<label id="apellidos">Apellidos:</label>
 			<br>
-			<input type="text" id="miApe" name="apellido">
+			<input type="text" id="miApe" name="apellido" required>
 			<br>
 			<label id="lnot">Nota:</label>
 			<br>
@@ -33,19 +33,20 @@
 			<br>
 			<label id="email">Email:</label>
 			<br>
-			<input type="email" name="email" id="miE" required>
+			<input type="email" for="miE" name="miE" id="miE" class="miE" required aria-required="true">
 			<br>				
 			<label id="lCed">Cedula de Identidad:</label>
 			<br>			
-			<input type="text" id="miCed" name="cedula" required>
+			<input type="text" id="miCed" required aria-required="true">
 			<br>
-			<br>										
+			<br>
+			<input type="submit" name="submit" class="submit" value="Registrar Alumnos">
+			<button id="btn2">Mostrar Promedio</button>
+			<button id="btn3">Mostrar Nota Mayor</button>
+			<button id="btn4">Mostrar Nota mas baja</button>										
 		</form>
 	</div>
-	<button id="btn1">Registrar Alumnos</button>
-	<button id="btn2">Mostrar Promedio</button>
-	<button id="btn3">Mostrar Nota Mayor</button>
-	<button id="btn4">Mostrar Nota mas baja</button>
+	
 	<br>
 	<br>
 	<div id="Tabla" align="center">

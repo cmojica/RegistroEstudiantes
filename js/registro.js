@@ -1,3 +1,4 @@
+
 //Funcion que edita los registros de la tabla 
 function editarRegistro(id){
 	for(var i=0; i < localStorage.length; i++){
@@ -58,6 +59,53 @@ function listarEstudiantes(){
 	}	
 //Jquery
 $(document).ready(function(){
+	
+	$.validator.setDefaults({
+		submitHandler: function() {
+			alert("submitted!");
+		}
+	});
+	
+	// validate signup form on keyup and submit
+	$("#miForm").validate({
+		rules: {
+			miNom: "required",
+			miApe: "required",
+			miNota: {
+				required: true,
+				minlength: 2
+			},
+			miE: {
+				required: true,
+				minlength: 5
+			},
+			miCed: {
+				required: true,
+				email: true
+			},
+			errorElement:"span",
+			messages: {
+				miNom: {
+					required: "Porfavor ingrese su nombre",
+					minlength: "Ingrese como minimo 3 caracteres"
+				},
+				miApe: "Porfavor ingrese su apellido",
+				miNota: {
+					required: "Please enter a username",
+					minlength: "Your username must consist of at least 2 characters"
+				},
+				miE: {
+					required: "Please provide a password",
+				},
+				miCed: {
+					required: "Please provide a password",
+					minlength: "Your password must be at least 5 characters long",
+					equalTo: "Please enter the same password as above"
+				},
+			}
+		}
+	});
+
 	//Ver tabla de Estudiantes
 	listarEstudiantes();
 	//Crear un id automatico
@@ -70,14 +118,16 @@ $(document).ready(function(){
 	$("#miCod").val(contador);
 	
 	//Funcion para registrar estudiantes
-	$("#btn1").click(function(){
+	$(".submit").click(function(){
 		var id=$("#miCod").val();
 		var nombre=$("#miNom").val();
 		var apellido=$("#miApe").val();
 		var nota=$("#miNota").val();
 		var email=$("#miE").val();
 		var cedula=$("#miCed").val();
-				
+		if((nombre,apellido,nota,email,cedula).length===0){
+			return false;
+		}else{		
 		var registro={
 			id:id,
 			nombre:nombre,
@@ -85,6 +135,7 @@ $(document).ready(function(){
 			nota:nota,
 			email:email,
 			cedula:cedula
+			}
 		};
 		localStorage.setItem(id, JSON.stringify(registro));
 		contador=localStorage.length+1;
